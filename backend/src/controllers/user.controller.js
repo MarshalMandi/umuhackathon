@@ -23,7 +23,7 @@ export async function getMyFriends(req, res) {
     try {
         const currentUserId = req.user._id
         const myFriends = await User.findById(currentUserId).select("friends").populate(
-            "friends", "fullName profilePic nativeLanguage learningLanguage"
+            "friends", "fullName profilePic nativeSkills learningLanguage"
         )
         res.status(200).json(myFriends.friends)
     } catch (error) {

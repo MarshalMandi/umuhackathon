@@ -14,7 +14,7 @@ const Sidebar = () => {
                 <Link to="/" className="flex items-center gap-2.5">
                     <ShipWheelIcon className="size-9 text-primary" />
                     <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary  tracking-wider">
-                        Streamify
+                        MentorConnect
                     </span>
                 </Link>
             </div>
@@ -35,7 +35,7 @@ const Sidebar = () => {
                         }`}
                 >
                     <UsersIcon className="size-5 text-base-content opacity-70" />
-                    <span>Friends</span>
+                    <span>Connections</span>
                 </Link>
 
                 <Link

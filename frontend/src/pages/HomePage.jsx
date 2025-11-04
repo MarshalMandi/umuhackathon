@@ -56,10 +56,10 @@ const HomePage = () => {
         <div className="p-4 sm:p-6 lg:p-8">
             <div className="container mx-auto space-y-10">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Your Friends</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Your Connections</h2>
                     <Link to="/notifications" className="btn btn-outline btn-sm">
                         <UsersIcon className="mr-2 size-4" />
-                        Friend Requests
+                        User Requests
                     </Link>
                 </div>
 
@@ -81,9 +81,9 @@ const HomePage = () => {
                     <div className="mb-6 sm:mb-8">
                         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                             <div>
-                                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Meet New Learners</h2>
+                                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Meet New Mentors</h2>
                                 <p className="opacity-70">
-                                    Discover perfect language exchange partners based on your profile
+                                    Discover perfect mentorship exchange partners based on your profile
                                 </p>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ const HomePage = () => {
                         <div className="card bg-base-200 p-6 text-center">
                             <h3 className="font-semibold text-lg mb-2">No recommendations available</h3>
                             <p className="text-base-content opacity-70">
-                                Check back later for new language partners!
+                                Check back later for new mentorship partners!
                             </p>
                         </div>
                     ) : (
