@@ -24,10 +24,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "",
     },
-    nativeLanguage: {
+    nativeSkills: [{
         type: String,
         default: "",
-    },
+    }],
     learningLanguage: {
         type: String,
         default: "",

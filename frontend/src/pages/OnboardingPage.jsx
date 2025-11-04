@@ -13,7 +13,7 @@ const OnboardingPage = () => {
     const [formState, setFormState] = useState({
         fullName: authUser?.fullName || "",
         bio: authUser?.bio || "",
-        nativeLanguage: authUser?.nativeLanguage || "",
+        nativeSkills: authUser?.nativeSkills || "",
         learningLanguage: authUser?.learningLanguage || "",
         location: authUser?.location || "",
         profilePic: authUser?.profilePic || "",
@@ -110,27 +110,22 @@ const OnboardingPage = () => {
                             {/* NATIVE LANGUAGE */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Native Language</span>
+                                    <span className="label-text">skills</span>
                                 </label>
-                                <select
-                                    name="nativeLanguage"
-                                    value={formState.nativeLanguage}
-                                    onChange={(e) => setFormState({ ...formState, nativeLanguage: e.target.value })}
-                                    className="select select-bordered w-full"
-                                >
-                                    <option value="">Select your native language</option>
-                                    {LANGUAGES.map((lang) => (
-                                        <option key={`native-${lang}`} value={lang.toLowerCase()}>
-                                            {lang}
-                                        </option>
-                                    ))}
-                                </select>
+                                <input
+                                    type="text"
+                                    name="nativeskills"
+                                    value={formState.nativeSkills}
+                                    onChange={(e) => setFormState({ ...formState, nativeSkills: e.target.value })}
+                                    className="input input-bordered w-full"
+                                    placeholder="Your full name"
+                                />
                             </div>
 
                             {/* LEARNING LANGUAGE */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Learning Language</span>
+                                    <span className="label-text">Speaking Language</span>
                                 </label>
                                 <select
                                     name="learningLanguage"

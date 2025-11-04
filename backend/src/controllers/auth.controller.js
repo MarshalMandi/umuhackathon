@@ -92,23 +92,24 @@ export let logout = async (req, res) => {
 export let onboard = async (req, res) => {
     try {
         const userId = req.user._id
-        const { fullName, bio, nativeLanguage, learningLanguage, location } = req.body
-        if (!fullName || !bio || !nativeLanguage || !learningLanguage || !location) {
+        const { fullName, bio, nativeSkills, learningLanguage, location } = req.body
+        if (!fullName || !bio || !nativeSkills || !learningLanguage || !location) {
             return res.status(400).json({
                 message: "All Fields Are Required",
                 missingFields: [
                     !fullName && "fullName",
                     !bio && "bio",
-                    !nativeLanguage && "nativeLanguage",
+                    !nativeSkills && "nativeSkills",
                     !learningLanguage && "learningLanguage",
                     !location && "location",
                 ].filter(Boolean),
             })
         }
+        const skillsList = nativeSkills.split(",").map(skill => skill.trim());
         const updatedUser = await User.findByIdAndUpdate(userId, {
             fullName,
             bio,
-            nativeLanguage,
+            nativeSkills: skillsList,
             learningLanguage,
             location,
             isOnboarded: true,
@@ -130,5 +131,17 @@ export let onboard = async (req, res) => {
     } catch (error) {
         console.log("Onboarding Error")
         res.status(500).json({ message: "Onboarding Error" })
+    }
+}
+
+export let addskill = async (req, res) => {
+    try {
+        const { newSkill } = req.body
+        const userId = req.user._id
+        const newSkills = await User.findByIdAndUpdate(userId, { $addToSet: { nativeSkills: newSkill } }, { new: true })
+        res.status(200).json({ newSkills })
+    } catch (error) {
+        console.log("adding skill error")
+        res.status(500).json({ message: "Adding Skill error" })
     }
 }
