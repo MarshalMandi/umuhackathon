@@ -47,6 +47,10 @@ const HomePage = () => {
             setOutgoingRequestsIds(outgoingIds);
         }
     }, [outgoingFriendReqs]);
+    console.log("the value of outgoing request ids is", outgoingRequestsIds)
+    console.log("the value of outgoing request ids is", friends)
+    console.log("the value of outgoing request ids is", recommendedUsers)
+    console.log("the value of outgoing request ids is", outgoingFriendReqs)
 
     return (
         <div className="p-4 sm:p-6 lg:p-8">
@@ -124,7 +128,7 @@ const HomePage = () => {
                                             </div>
 
                                             {/* Languages with flags */}
-                                            <div className="flex flex-wrap gap-1.5">
+                                            {/* <div className="flex flex-wrap gap-1.5">
                                                 <span className="badge badge-secondary">
                                                     {getLanguageFlag(user.nativeLanguage)}
                                                     Native: {capitialize(user.nativeLanguage)}
@@ -133,7 +137,7 @@ const HomePage = () => {
                                                     {getLanguageFlag(user.learningLanguage)}
                                                     Learning: {capitialize(user.learningLanguage)}
                                                 </span>
-                                            </div>
+                                            </div> */}
 
                                             {user.bio && <p className="text-sm opacity-70">{user.bio}</p>}
 
